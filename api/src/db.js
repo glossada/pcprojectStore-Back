@@ -2,9 +2,10 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const productModel = require("./Models/Product.js");
+const EjercicioModel = require("./Models/Ejercicio.js");
 const CategoryModel = require('./Models/Category.js');
 const UserModel = require('./Models/User.js');
+const ExersiseModel = require("./Models/Ejercicio.js");
 
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
@@ -30,11 +31,12 @@ let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-productModel(sequelize);
+EjercicioModel(sequelize);
 CategoryModel(sequelize);
 UserModel(sequelize);
+ExersiseModel(sequelize);
 
-const { Product } = sequelize.models;
+const { Ejercicio } = sequelize.models;
 
 module.exports = {
     ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

@@ -4,7 +4,7 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "Product",
+    "Ejercicio",
     {
       id: {
         type: DataTypes.UUID,
@@ -15,10 +15,6 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      price: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
-      },
       description: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -27,32 +23,14 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      stock: {
+      series: {
         type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      repeticiones: {
+        type: DataTypes.STRING,
         defaultValue: 1,
       },
-      brand: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      expirationdate: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      // categories: {
-      //   type: DataTypes.STRING,
-      //   allowNull: false,
-      // },
-     available: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: true,
-      },  
-      discount: {
-        type: DataTypes.INTEGER,
-        allowNull:false,
-        defaultValue: 0
-      }
       
     },
     {
