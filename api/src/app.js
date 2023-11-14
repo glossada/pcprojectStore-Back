@@ -2,11 +2,10 @@ const express = require("express");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const morgan = require('morgan');
-// const routes = require('./Routes/index');
+const routes = require('./Routes/index');
 const cors = require("cors");
 const server = express();
 server.use(cookieParser());
-
 server.use(express.json());
 server.use(cors());
 server.use(cors());
@@ -27,7 +26,7 @@ server.use((req, res, next) => {
   next();
 });
 
-// server.use('/',routes)
+server.use('/',routes)
 server.use(morgan('dev'));
 
 
