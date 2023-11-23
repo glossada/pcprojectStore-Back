@@ -8,7 +8,7 @@ excersiseRouter.get('/',(req,res)=>{
     getAllxccersises(req,res);
 })
 
-excersiseRouter.put('/',(req,res)=>{
+excersiseRouter.post('/',(req,res)=>{
     postExcersise(req,res);
 })
 

@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      repeticiones: {
+      repetitions: {
         type: DataTypes.STRING,
         defaultValue: 1,
       },
